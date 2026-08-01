@@ -21,24 +21,19 @@ function getProfilePicPath($picFileName) {
     
     <style>
         :root {
-            /* Vibrant Modern Palette */
             --navy-900: #0f172a;
             --navy-800: #1e293b;
             --sapphire-600: #2563eb;
             --sapphire-700: #1d4ed8;
             --sapphire-50:  #eff6ff;
-            --emerald-600: #059669;
-            --emerald-500: #10b981;
-            --emerald-50:  #ecfdf5;
             --slate-800: #1e293b;
             --slate-600: #475569;
         }
 
-        /* Ambient Radiant Mesh Background */
         body {
             background: 
                 radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.10) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.10) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(30, 41, 59, 0.08) 0px, transparent 50%),
                 radial-gradient(at 0% 100%, rgba(239, 246, 255, 0.8) 0px, transparent 50%),
                 #f8fafc;
@@ -48,7 +43,6 @@ function getProfilePicPath($picFileName) {
             min-height: 100vh;
         }
 
-        /* Top Navigation Bar */
         .navbar-slate {
             background: rgba(15, 23, 42, 0.95) !important;
             backdrop-filter: blur(12px);
@@ -62,7 +56,7 @@ function getProfilePicPath($picFileName) {
         }
 
         .navbar-brand i {
-            color: var(--sapphire-600);
+            color: #38bdf8;
         }
 
         .nav-link {
@@ -74,7 +68,6 @@ function getProfilePicPath($picFileName) {
             color: #ffffff !important;
         }
 
-        /* Buttons */
         .btn-sapphire {
             background-color: var(--sapphire-600);
             color: #ffffff;
@@ -90,22 +83,6 @@ function getProfilePicPath($picFileName) {
             transform: translateY(-1px);
         }
 
-        .btn-emerald {
-            background-color: var(--emerald-600);
-            color: #ffffff;
-            border: none;
-            font-weight: 600;
-            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
-            transition: all 0.2s ease;
-        }
-
-        .btn-emerald:hover {
-            background-color: #047857;
-            color: #ffffff;
-            transform: translateY(-1px);
-        }
-
-        /* Cards & Containers */
         .card {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(10px);
@@ -120,13 +97,11 @@ function getProfilePicPath($picFileName) {
             box-shadow: 0 12px 25px rgba(15, 23, 42, 0.1) !important;
         }
 
-        /* Styled Vacancy Post Cards */
         .vacancy-card {
             background: linear-gradient(145deg, #ffffff 0%, var(--sapphire-50) 100%);
             border-left: 5px solid var(--sapphire-600);
         }
 
-        /* Portal Hero Banners */
         .bg-corporate-hero {
             background: linear-gradient(135deg, var(--navy-900) 0%, #1e3a8a 100%);
             color: #ffffff;
@@ -134,7 +109,6 @@ function getProfilePicPath($picFileName) {
             box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
         }
 
-        /* Badges */
         .badge-sapphire {
             background-color: var(--sapphire-50);
             color: var(--sapphire-700);
@@ -142,14 +116,6 @@ function getProfilePicPath($picFileName) {
             font-weight: 600;
         }
 
-        .badge-emerald {
-            background-color: var(--emerald-50);
-            color: var(--emerald-600);
-            border: 1px solid #a7f3d0;
-            font-weight: 600;
-        }
-
-        /* Nav Avatar */
         .nav-profile-img {
             width: 32px;
             height: 32px;
@@ -159,7 +125,6 @@ function getProfilePicPath($picFileName) {
         }
 
         .text-sapphire { color: var(--sapphire-600) !important; }
-        .text-emerald { color: var(--emerald-500) !important; }
         .text-navy { color: var(--navy-900) !important; }
     </style>
 </head>
@@ -184,7 +149,9 @@ function getProfilePicPath($picFileName) {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-outline-light btn-sm px-3 rounded-pill" href="logout.php">Logout</a>
+                <a class="btn btn-outline-light btn-sm px-3 rounded-pill" href="logout.php">
+                    <i class="bi bi-box-arrow-right me-1"></i> Logout
+                </a>
             </li>
         <?php else: ?>
             <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
