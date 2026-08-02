@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS users (
     email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
     role TEXT NOT NULL CHECK (role IN ('Student', 'Employer', 'Coordinator', 'Admin')),
+    profile_pic TEXT DEFAULT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -81,6 +82,14 @@ CREATE TABLE IF NOT EXISTS interviews (
     location_or_link TEXT NOT NULL,
     notes TEXT DEFAULT NULL,
     FOREIGN KEY (application_id) REFERENCES applications(application_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS notifications (
+    notification_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    message TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 -- Seed Initial Data
